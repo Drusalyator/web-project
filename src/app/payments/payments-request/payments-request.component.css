@@ -1,0 +1,215 @@
+.layout {
+    width: 700px;
+}
+
+.text-info {
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.form__item {
+    font-weight: 700;
+    color: grey;
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 30px;
+}
+
+.form__label {
+    width: 250px;
+}
+
+.form__input {
+    border: 0;
+    border-bottom: 1px solid darkgray;
+    line-height: 2em;
+    font-weight: 700;
+    color: black;
+    font-size: 15px;
+    width: 400px;
+    text-indent: 10px;
+    position: relative;
+    top: -5px;
+}
+
+.form__input::-webkit-outer-spin-button,
+.form__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.chose_nds__text {
+    font-weight: 700;
+    color: black;
+    font-size: 15px;
+    text-indent: 10px;
+}
+
+.input_short_yes {
+    width: 200px;
+}
+
+.form__input::placeholder {
+    color: #C1C1C1;
+}
+
+.form__input:focus {
+    outline: none;
+    border-bottom-color: red;
+}
+
+.form__input:valid {
+    border-bottom-color: #4dc12e;
+}
+
+.input_border_no {
+    border: 0;
+}
+
+.button__wrapper {
+    position: relative;
+    width: 170px;
+    height: 45px;
+    border: 1px solid black;
+}
+
+.button_img {
+    position: relative;
+    top: -16px;
+    left: -20px;
+    opacity: .7;
+    z-index: 1;
+}
+
+.button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    transition: background-color .8s ease-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Geometria';
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:not(:disabled):hover {
+    background-color: white;
+}
+
+.button:disabled {
+    opacity: .5;
+    cursor: auto;
+}
+
+.chose_nds {
+    display: flex;
+}
+
+.chose_nds button,
+.clear-form-button {
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    transition: color .15s ease-out;
+    display: block;
+    color: #0c75c4;
+    font-family: 'Geometria';
+    font-weight: 500;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-top: 12px;
+}
+
+.clear-form-button {
+    margin-left: 0;
+    font-size: 15px;
+    padding-left: 0;
+}
+
+.chose_nds button:hover,
+.clear-form-button:hover {
+    color: #408AD2;
+}
+
+.link {
+    text-decoration: none;
+    outline: none;
+    transition: color .15s ease-out;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+}
+
+.link_blue_yes,
+.link_blue_yes:visited {
+    color: #0c75c4;
+}
+
+.link_blue_yes:hover {
+    color: #408AD2;
+}
+
+@media screen and (max-width: 800px) {
+    .form__label {
+        width: 180px;
+    }
+
+    .text-info {
+        width: 100%;
+    }
+
+    .layout {
+        width: 100%;
+    }
+
+    .form__input {
+        width: calc(100% - 220px);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .phone-link
+    {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .form__label {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .form__item {
+        flex-flow: column nowrap;
+    }
+
+    .form__label {
+        width: 100%;
+    }
+
+    .form__input {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .chose_nds__text {
+        margin-top: 15px;
+    }
+}

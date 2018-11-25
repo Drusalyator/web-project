@@ -1,0 +1,85 @@
+.layout
+{
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.navbar__item-icon {
+    position: relative;
+}
+
+.active__wrapper {
+    padding: 4px 10px 4px 0;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.navbar__item-icon img {
+    margin: 0 10px;
+    position: relative;
+    top: 2px;
+}
+
+.card-black {
+    display: none;
+}
+
+.link {
+    text-decoration: none;
+    outline: none;
+    transition: color .15s ease-out;
+    cursor: pointer;
+    display: block;
+}
+
+.link_blue_yes,
+.link_blue_yes:visited {
+    color: #0c75c4;
+}
+
+.link_blue_yes:hover {
+    color: #408AD2;
+}
+
+.active .active__wrapper a
+{
+    color: black;
+    cursor: auto;
+}
+
+.button-link {
+    display: block;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.active .active__wrapper a
+{
+    color: black;
+    cursor: auto;
+}
+
+.active .active__wrapper .card-blue {
+    display: none;
+}
+
+.active .active__wrapper .card-black {
+    display: block;
+}
+
+.active .active__wrapper {
+    background: #F0F0F0;
+}
+
+.comp {
+    top: -3px;
+}
+
+@media screen and (max-width: 580px) {
+    .navbar__item {
+        margin-top: 10px;
+    }
+
+}
