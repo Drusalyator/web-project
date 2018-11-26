@@ -1,2 +1,76 @@
 <app-payments-pay-navbar></app-payments-pay-navbar>
-<p>2</p>
+<div class="layout">
+    <div class="text-info">
+        Сформируйте платёжку и загрузите её в свой банк для подписи
+    </div>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form">
+        <div class="form__item">
+            <label for="inn" class="form__label">ИНН получателя
+            </label>
+            <input class="form__input"
+                   type="text" id="inn"
+                   name="inn"
+                   placeholder="ИНН или название получателя"
+                   ngModel
+                   pattern="^[0-9]{10}|[0-9]{12}$"
+                   maxlength="12"
+                   required>
+        </div>
+        <div class="form__item">
+            <label for="bik" class="form__label">БИК</label>
+            <input class="form__input"
+                   type="text"
+                   id="bik"
+                   name="bik"
+                   ngModel
+                   pattern="^[0-9]{9}$"
+                   maxlength="9"
+                   required>
+        </div>
+        <div class="form__item">
+            <label for="number_ch" class="form__label">Номер счёта</label>
+            <input class="form__input"
+                   type="text"
+                   id="number_ch"
+                   name="number_ch"
+                   ngModel
+                   maxlength="20"
+                   pattern="^[0-9]{20}$"
+                   required>
+        </div>
+        <div class="form__item">
+            <div class="form__label">За что</div>
+            <div>
+                <div class="chose_nds__text">{{ NDS }}</div>
+                <div class="chose_nds">
+                    <button type="button" (click)="choseNDS('НДС 18%')">НДС 18%</button>
+                    <button type="button" (click)="choseNDS('НДС 10%')">НДС 10%</button>
+                    <button type="button" (click)="choseNDS('без НДС')">без НДС</button>
+                </div>
+            </div>
+        </div>
+        <div class="form__item">
+            <label for="amount" class="form__label">Сколько</label>
+            <input class="form__input input_short_yes"
+                   type="number"
+                   id="amount"
+                   name="amount"
+                   min="1000"
+                   ngModel
+                   max="75000"
+                   required>
+        </div>
+        <div class="button__wrapper">
+            <button class="button" type="submit" [disabled]="!f.valid">
+                <span class="button__text">
+                    Получить файл для интернет банка
+                </span>
+            </button>
+            <img src="https://static.tildacdn.com/tild3464-3130-4365-a233-613965613735/BUTTON_1.png"
+                 class="button_img" width="370px" height="70px">
+        </div>
+        <div class="clear-form-button__wrapper">
+            <button type="button" class="clear-form-button" (click)="onClear(f)">Очистить форму</button>
+        </div>
+    </form>
+</div>

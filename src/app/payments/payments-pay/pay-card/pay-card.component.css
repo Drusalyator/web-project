@@ -1,0 +1,188 @@
+.layout {
+    width: 100%;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.card__wrapper {
+    box-sizing: border-box;
+    width: 340px;
+    padding: 5px;
+}
+
+.other-block {
+    box-sizing: border-box;
+    width: 360px;
+    margin-left: 40px;
+    padding-top: 15px;
+}
+
+.form__item {
+    font-weight: 700;
+    color: black;
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 20px;
+}
+
+.form__label {
+    width: 200px;
+}
+
+.card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #F3F3F3;
+    border-radius: 8px;
+    box-shadow: -6px 3px 7px 1px rgba(0,0,0,.1), 0px 15px 20px rgba(0,0,0,.1), 6px 3px 20px rgba(0,0,0,.1);
+    padding: 20px;
+}
+
+.cards-logo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cards-logo img {
+    margin-left: 15px;
+}
+
+.visa-logo {
+    position: relative;
+    top: 3px;
+}
+
+.card-number {
+    margin-top: 40px;
+    width: 80%;
+}
+
+.form__item-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.form__item-wrapper input {
+    width: 30%;
+    margin-right: 30px;
+}
+
+.form__input {
+    border: 0;
+    border-bottom: 1px solid #C1C1C1;
+    line-height: 1.8em;
+    font-weight: 700;
+    width: 330px;
+    color: black;
+    font-family: 'Geometria', Arial, sans-serif;
+    font-size: 15px;
+    text-indent: 10px;
+    position: relative;
+    background: transparent;
+    top: -5px;
+}
+
+.form__input::-webkit-outer-spin-button,
+.form__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.form__input::placeholder {
+    color: #C1C1C1;
+}
+
+.form__input:focus {
+    outline: none;
+    border-bottom-color: red;
+}
+
+.form__input:valid {
+    border-bottom-color: #4dc12e;
+}
+
+.button__wrapper {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.button_img {
+    position: relative;
+    top: -13px;
+    left: -20px;
+    opacity: .7;
+    z-index: 1;
+}
+
+.button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    transition: background-color .8s ease-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Geometria';
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:not(:disabled):hover {
+    background-color: white;
+}
+
+.button:disabled {
+    opacity: .5;
+    cursor: auto;
+}
+
+@media screen and (max-width: 830px) {
+    .form {
+        flex-flow: column nowrap;
+    }
+    .other-block {
+        margin: 20px 0 0 10px;
+    }
+}
+
+@media screen and (max-width: 466px) {
+    .other-block {
+        width: 90%;
+    }
+
+    .form__input {
+        width: 100%;
+    }
+
+    .card__wrapper {
+        width: 100%;
+    }
+
+    .form__item {
+        flex-flow: column nowrap;
+    }
+
+    .form__input-new {
+        margin-top: 10px;
+    }
+}

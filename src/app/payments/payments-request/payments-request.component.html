@@ -12,7 +12,7 @@
                    name="inn"
                    placeholder="ИНН или название получателя"
                    ngModel
-                   pattern="^[1-9]{10}|[1-9]{12}$"
+                   pattern="^[0-9]{10}|[0-9]{12}$"
                    maxlength="12"
                    required>
         </div>
@@ -23,7 +23,7 @@
                    id="bik"
                    name="bik"
                    ngModel
-                   pattern="^[1-9]{9}$"
+                   pattern="^[0-9]{9}$"
                    maxlength="9"
                    required>
         </div>
@@ -35,7 +35,7 @@
                    name="number_ch"
                    ngModel
                    maxlength="20"
-                   pattern="^[1-9]{20}$"
+                   pattern="^[0-9]{20}$"
                    required>
         </div>
         <div class="form__item">
@@ -56,7 +56,6 @@
                    id="amount"
                    name="amount"
                    min="1000"
-                   step="100"
                    ngModel
                    max="75000"
                    required>
@@ -72,11 +71,6 @@
                        placeholder="+7"
                        required
                        ngModel>
-                <div>
-                    <a href="#" class="link link_blue_yes phone-link">
-                        Оставляя телефон вы соглашаетесь на обработку персональных данных
-                    </a>
-                </div>
             </div>
         </div>
         <div class="form__item">
