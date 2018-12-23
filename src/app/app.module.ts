@@ -18,8 +18,8 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SigninGuard } from './auth/auth-guards/signin-guard.service';
-import { SignoutGuard } from './auth/auth-guards/signout-guard';
 import { AdminComponent } from './admin-part/admin.component';
+import { FooterComponent } from './main-part/footer/footer.component';
 import {AdminGuard} from './auth/auth-guards/admin-guard.service';
 
 @NgModule({
@@ -36,7 +36,8 @@ import {AdminGuard} from './auth/auth-guards/admin-guard.service';
         MainPartComponent,
         SigninComponent,
         AuthComponent,
-        AdminComponent
+        AdminComponent,
+        FooterComponent
     ],
     imports: [
         BrowserModule,
@@ -45,7 +46,7 @@ import {AdminGuard} from './auth/auth-guards/admin-guard.service';
         AppRoutingModule,
         HttpClientModule
     ],
-    providers: [AuthService, SigninGuard, SignoutGuard, AdminGuard],
+    providers: [AuthService, SigninGuard, AdminGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,13 +8,12 @@ import { AuthComponent } from './auth/auth.component';
 import { MainPartComponent } from './main-part/main-part.component';
 import { PaymentsPayComponent } from './main-part/payments/payments-pay/payments-pay.component';
 import { SigninGuard } from './auth/auth-guards/signin-guard.service';
-import { SignoutGuard } from './auth/auth-guards/signout-guard';
-import {AdminComponent} from './admin-part/admin.component';
-import {AdminGuard} from './auth/auth-guards/admin-guard.service';
+import { AdminComponent } from './admin-part/admin.component';
+import { AdminGuard } from './auth/auth-guards/admin-guard.service';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'login', component: AuthComponent, canActivate: [SignoutGuard] },
+    { path: 'login', component: AuthComponent },
     { path: 'admin', component: AdminComponent, canActivate: [AdminGuard] },
     { path: 'main', component: MainPartComponent, children: [
             { path: 'payments-request', component: PaymentsRequestComponent },
@@ -22,7 +21,7 @@ const appRoutes: Routes = [
                     { path: 'by-card', component: PayCardComponent },
                     { path: 'by-internet-bank', component: PayInternetBankComponent }
                 ]},
-        ], canActivate: [SigninGuard]},
+        ], canActivate: [SigninGuard]}
 ];
 
 @NgModule({

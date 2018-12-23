@@ -1,0 +1,80 @@
+.layout
+{
+    padding: 40px 45px 30px;
+}
+
+.footer__title
+{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.services
+{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.service
+{
+    width: 300px;
+    border: 1px solid #C1C1C1;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.service__photo
+{
+    width: 260px;
+    overflow: hidden;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.service__photo img
+{
+    object-fit: cover;
+    transition: all .4s ease-out;
+}
+
+.service__photo img:hover
+{
+    transform: scale(1.2);
+}
+
+.service__title
+{
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 15px;
+    padding-left: 7px;
+}
+
+.service__cost
+{
+    color: grey;
+    font-size: 14px;
+    padding-left: 7px;
+    margin: 15px 0 20px 0;
+    font-weight: 700;
+}
+
+.services__info
+{
+    font-weight: 700;
+    width: 700px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 800px)
+{
+    .services__info
+    {
+        width: 100%;
+    }
+}

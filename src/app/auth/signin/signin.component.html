@@ -1,21 +1,34 @@
-<div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-    <form (ngSubmit)="onSignin(f)" #f="ngForm">
-      <div class="form-group">
-        <label for="email">Mail</label>
-        <input type="email" id="email" name="email" ngModel class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          ngModel
-          class="form-control">
-      </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Sign In</button>
+<div class="layout">
+    <div class="login__title">Вход в интернет банк</div>
+    <div *ngIf="authService.incorrect" style="color: red">Некорректный логин или пароль</div>
+    <form (ngSubmit)="onSignin(f)" #f="ngForm" class="form">
+        <div class="form__group">
+            <label class="form__label" for="email">E-mail</label>
+            <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    ngModel
+                    class="form__input"
+                    required>
+        </div>
+        <div class="form__group">
+            <label for="password" class="form__label">Пароль</label>
+            <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    ngModel
+                    class="form__input"
+                    required>
+        </div>
+        <div class="button__wrapper">
+            <button class="button" type="submit" [disabled]="!f.valid">
+                <span class="button__text">Войти</span>
+            </button>
+            <img src="https://static.tildacdn.com/tild3464-3130-4365-a233-613965613735/BUTTON_1.png"
+                 class="button_img" width="140px" height="60px">
+        </div>
     </form>
-  </div>
 </div>
 
