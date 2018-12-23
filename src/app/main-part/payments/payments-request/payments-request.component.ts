@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, ViewChild, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {UserModule} from '../../user.module';
 
@@ -7,10 +7,17 @@ import {UserModule} from '../../user.module';
     templateUrl: './payments-request.component.html',
     styleUrls: ['./payments-request.component.css']
 })
-export class PaymentsRequestComponent {
+export class PaymentsRequestComponent implements OnInit {
     public user: UserModule;
     @ViewChild('f') slForm: NgForm;
     NDS = 'без НДС';
+
+    ngOnInit(): void {
+        $(function() {
+            // @ts-ignore
+            $('#phone_n').mask('+7 999 999-99-99');
+        });
+    }
 
     constructor() {
         this.user = new UserModule();

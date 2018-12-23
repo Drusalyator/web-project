@@ -4,6 +4,7 @@ export class UserModule {
     public userPhone: string;
     public userSite: string;
     public userEmail: string;
+
     constructor() {
         this.userName = 'Швецова Мария Валерьевна';
         this.userCompany = 'Индивидуальный предприниматель';

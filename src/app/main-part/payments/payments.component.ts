@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class PaymentsComponent {
-    loadedFeature = 'payments-pay/by-card';
+    loadedFeature = '/main/payments-pay';
 
     onNavigate(feature: string) {
         this.loadedFeature = feature;

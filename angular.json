@@ -25,7 +25,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/jquery.maskedinput/src/jquery.maskedinput.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -81,7 +84,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
