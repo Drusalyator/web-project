@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-payments-pay',
@@ -7,16 +6,11 @@ import {Router} from '@angular/router';
     styleUrls: ['./payments-pay.component.css']
 })
 
-export class PaymentsPayComponent implements OnInit{
+export class PaymentsPayComponent {
     loadedsFeature = 'main/payments-pay/by-card';
 
     onNavigates(feature: string) {
         this.loadedsFeature = feature;
     }
 
-    constructor(private router: Router) {}
-
-    ngOnInit() {
-        this.router.navigate(['main/payments-pay/by-card']);
-    }
 }

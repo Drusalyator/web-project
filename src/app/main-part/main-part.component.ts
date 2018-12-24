@@ -1,6 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
-import {AuthService} from '../auth/auth.service';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-main-part',
@@ -8,11 +6,5 @@ import {AuthService} from '../auth/auth.service';
     styleUrls: ['./main-part.component.css']
 })
 
-export class MainPartComponent implements  OnInit {
-
-    constructor(private authService: AuthService, private router: Router) {}
-
-    ngOnInit() {
-        this.router.navigate(['main/payments-pay/by-card']);
-    }
+export class MainPartComponent {
 }

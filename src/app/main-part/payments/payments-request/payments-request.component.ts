@@ -1,25 +1,19 @@
 import {Component, ViewChild, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {UserModule} from '../../user.module';
+import {ServerService} from '../../server.service';
 
 @Component({
     selector: 'app-payments-request',
     templateUrl: './payments-request.component.html',
     styleUrls: ['./payments-request.component.css']
 })
-export class PaymentsRequestComponent implements OnInit {
+export class PaymentsRequestComponent {
     public user: UserModule;
     @ViewChild('f') slForm: NgForm;
     NDS = 'без НДС';
 
-    ngOnInit(): void {
-        $(function() {
-            // @ts-ignore
-            $('#phone_n').mask('+7 999 999-99-99');
-        });
-    }
-
-    constructor() {
+    constructor(private serverService: ServerService) {
         this.user = new UserModule();
     }
 
@@ -28,7 +22,14 @@ export class PaymentsRequestComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
-        form.reset();
+        const formValue = form.value;
+        formValue['nds'] = this.NDS;
+        console.log(formValue);
+        this.serverService.storePaymentsRequest(formValue)
+            .subscribe(
+                (response) => console.log(response),
+                (error) =>  console.log(error)
+            );
     }
 
     onClear(form: NgForm) {

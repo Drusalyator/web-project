@@ -20,7 +20,11 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SigninGuard } from './auth/auth-guards/signin-guard.service';
 import { AdminComponent } from './admin-part/admin.component';
 import { FooterComponent } from './main-part/footer/footer.component';
-import {AdminGuard} from './auth/auth-guards/admin-guard.service';
+import { AdminGuard } from './auth/auth-guards/admin-guard.service';
+import { ServerService } from './main-part/server.service';
+import {AdminNavbarComponent} from './admin-part/admin-navbar/admin-navbar.component';
+import {AdminPayComponent} from './admin-part/admin-pay/admin-pay.component';
+import {AdminRequestComponent} from './admin-part/admin-request/admin-request.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +41,10 @@ import {AdminGuard} from './auth/auth-guards/admin-guard.service';
         SigninComponent,
         AuthComponent,
         AdminComponent,
-        FooterComponent
+        FooterComponent,
+        AdminNavbarComponent,
+        AdminPayComponent,
+        AdminRequestComponent
     ],
     imports: [
         BrowserModule,
@@ -46,7 +53,7 @@ import {AdminGuard} from './auth/auth-guards/admin-guard.service';
         AppRoutingModule,
         HttpClientModule
     ],
-    providers: [AuthService, SigninGuard, AdminGuard],
+    providers: [AuthService, SigninGuard, AdminGuard, ServerService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
