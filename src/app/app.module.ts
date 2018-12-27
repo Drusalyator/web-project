@@ -25,6 +25,7 @@ import { ServerService } from './main-part/server.service';
 import {AdminNavbarComponent} from './admin-part/admin-navbar/admin-navbar.component';
 import {AdminPayComponent} from './admin-part/admin-pay/admin-pay.component';
 import {AdminRequestComponent} from './admin-part/admin-request/admin-request.component';
+import {CookieService} from 'ngx-cookie-service';
 
 @NgModule({
     declarations: [
@@ -53,7 +54,7 @@ import {AdminRequestComponent} from './admin-part/admin-request/admin-request.co
         AppRoutingModule,
         HttpClientModule
     ],
-    providers: [AuthService, SigninGuard, AdminGuard, ServerService],
+    providers: [AuthService, SigninGuard, AdminGuard, ServerService, CookieService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

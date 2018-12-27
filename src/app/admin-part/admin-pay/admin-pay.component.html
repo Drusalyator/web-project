@@ -1,1 +1,32 @@
-<h1>Pay</h1>
+<button type="button" class="clear-form-button" (click)="getData()">Получить данные</button>
+<table>
+    <tr class="table__header">
+        <td>Номер карты</td>
+        <td>CVV</td>
+        <td>ММ\ГГ</td>
+        <td>Сумма</td>
+        <td>Email</td>
+        <td>Комментарий</td>
+        <td>Безопасный</td>
+        <td>Изменить безопасность</td>
+    </tr>
+    <tr *ngFor="let value of Requests; let i = index">
+        <td>{{value.card}}</td>
+        <td>{{value.cvc}}</td>
+        <td>{{value.date}}</td>
+        <td>{{value.email}}</td>
+        <td>{{value.amount}}</td>
+        <td>{{value.comment}}</td>
+        <td>{{value.isSecure}}</td>
+        <td><button type="button" (click)="changeSecure(value.id, i)">Изменить</button></td>
+    </tr>
+</table>
+<div class="logout-button">
+    <div class="logout__button">
+        <button class="button__log" (click)="authService.logout()">
+            <span class="button__text">Выйти</span>
+        </button>
+        <img src="https://static.tildacdn.com/tild3464-3130-4365-a233-613965613735/BUTTON_1.png"
+             class="button_img" width="180px" height="60px">
+    </div>
+</div>

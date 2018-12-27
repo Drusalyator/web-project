@@ -1,0 +1,96 @@
+*
+{
+    font-family: 'Geometria', sans-serif;
+}
+
+table
+{
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+td
+{
+    width: 160px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+button
+{
+    margin-top: 20px;
+}
+
+tr
+{
+    text-align: center;
+}
+
+table__header tr
+{
+    font-weight: 700;
+}
+
+td.cvc
+{
+    width: 50px;
+}
+
+.logout__button {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.logout__button {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.button_img {
+    position: relative;
+    top: -13px;
+    left: -20px;
+    opacity: .7;
+    z-index: 1;
+}
+
+button.button__log {
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    transition: background-color .8s ease-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Geometria';
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    z-index: 5;
+}
+
+button.button__log:focus {
+    outline: none;
+}
+
+button.button__log:not(:disabled):hover {
+    background-color: white;
+}
+
+.logout-button
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}

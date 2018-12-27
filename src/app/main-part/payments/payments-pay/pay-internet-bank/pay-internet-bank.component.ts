@@ -3,6 +3,7 @@ import {UserModule} from '../../../user.module';
 import {NgForm} from '@angular/forms';
 import {ServerService} from '../../../server.service';
 import {saveAs as importedSaveAs} from 'file-saver';
+import {AuthService} from '../../../../auth/auth.service';
 
 @Component({
     selector: 'app-pay-internet-bank',
@@ -14,7 +15,7 @@ export class PayInternetBankComponent {
     @ViewChild('f') slForm: NgForm;
     NDS = 'без НДС';
 
-    constructor(private serverService: ServerService) {
+    constructor(private serverService: ServerService, private authService: AuthService) {
         this.user = new UserModule();
     }
 
@@ -25,6 +26,7 @@ export class PayInternetBankComponent {
     onSubmit(form: NgForm) {
         const formValue = form.value;
         formValue['nds'] = this.NDS;
+        formValue['csrf'] = this.authService.csrfToken;
         this.serverService.getPaymentsToDownload(formValue)
             .subscribe(
                 (response) => {console.log(response); this.downloadPayments(response); },

@@ -1,1 +1,28 @@
-<h1>Request</h1>
+<button type="button" class="clear-form-button" (click)="getData()">Получить данные</button>
+<table>
+    <tr class="table__header">
+        <td>БИК</td>
+        <td>ИНН</td>
+        <td>Сколько</td>
+        <td>Номер счета</td>
+        <td>Номер телефона</td>
+        <td>За что</td>
+    </tr>
+    <tr *ngFor="let value of Requests;">
+        <td>{{value.bik}}</td>
+        <td>{{value.inn}}</td>
+        <td>{{value.amount}}</td>
+        <td>{{value.number_ch}}</td>
+        <td>{{value.phone_n}}</td>
+        <td>{{value.nds}}</td>
+    </tr>
+</table>
+<div class="logout-button">
+    <div class="logout__button">
+        <button class="button__log" (click)="authService.logout()">
+            <span class="button__text">Выйти</span>
+        </button>
+        <img src="https://static.tildacdn.com/tild3464-3130-4365-a233-613965613735/BUTTON_1.png"
+             class="button_img" width="180px" height="60px">
+    </div>
+</div>

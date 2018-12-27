@@ -9,7 +9,7 @@ export class SigninGuard implements CanActivate {
     constructor(private authService: AuthService, private router: Router) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        if (this.authService.isAuthenticated() && !this.authService.isAdmin()) {
+        if (this.authService.typeOfUser === 'user') {
             return true;
         } else {
             this.router.navigate(['login']);

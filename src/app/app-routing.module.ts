@@ -14,13 +14,13 @@ import {AdminPayComponent} from './admin-part/admin-pay/admin-pay.component';
 import {AdminRequestComponent} from './admin-part/admin-request/admin-request.component';
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: 'main', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: AuthComponent },
     { path: 'admin', component: AdminComponent, children: [
             { path: '', redirectTo: 'payments-pay', pathMatch: 'full'},
             { path: 'payments-pay', component: AdminPayComponent },
             { path: 'payments-request', component: AdminRequestComponent }
-        ] },
+        ], canActivate: [AdminGuard]},
     { path: 'main', component: MainPartComponent, children: [
             { path: '', redirectTo: 'payments-pay', pathMatch: 'full' },
             { path: 'payments-request', component: PaymentsRequestComponent },
@@ -29,10 +29,8 @@ const appRoutes: Routes = [
                     { path: 'by-card', component: PayCardComponent },
                     { path: 'by-internet-bank', component: PayInternetBankComponent }
                 ]},
-        ]}
+        ], canActivate: [SigninGuard]}
 ];
-
-//, canActivate: [SigninGuard]
 
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],

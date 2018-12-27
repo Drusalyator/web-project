@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {UserModule} from '../user.module';
+import {AuthService} from '../../auth/auth.service';
 
 @Component({
     selector: 'app-footer',
@@ -10,7 +11,7 @@ import {UserModule} from '../user.module';
 export class FooterComponent {
     public user: UserModule;
 
-    constructor() {
+    constructor(private authService: AuthService) {
         this.user = new UserModule();
     }
 }

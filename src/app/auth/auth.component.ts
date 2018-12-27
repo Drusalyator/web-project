@@ -14,9 +14,6 @@ export class AuthComponent implements  OnInit {
     }
 
     ngOnInit(): void {
-        if (this.authService.isAuthenticated()) {
-            this.router.navigate(['main']);
-        }
     }
 
 }
